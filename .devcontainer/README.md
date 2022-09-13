@@ -2,10 +2,11 @@
 
 To reproduce this bug, you need a Docker Hub account with a private repository you can push to (or some other private image registry).
 
-1. In `.devcontainer/devcontainer.json`, uncomment lines 6-10
-2. In Docker Hub or other registry, create a private repository called `devcontainer-pull-test`
-3. From this directory, run `devcontainer build --workspace-folder . --image-name YOUR_DOCKERHUB/devcontainer-pull-test --push --buildkit` from the repository (updating `YOUR_DOCKERHUB` to refer to your own account or private registry)
-4. In VS Code, run `Remote-Containers: Clone Repository in Named Container Volume` and clone this repository. The repository fails to clone with output that looks something like this:
+1. In `.devcontainer/devcontainer.json`, update `YOUR_DOCKERHUB` to refer to your own account or private registry. Commit and push.
+2. In `.devcontainer/devcontainer.json`, uncomment lines 6-10
+3. In Docker Hub or other registry, create a private repository called `devcontainer-pull-test`
+4. From this directory, run `devcontainer build --workspace-folder . --image-name YOUR_DOCKERHUB/devcontainer-pull-test --push --buildkit` from the repository (again replacing `YOUR_DOCKERHUB`)
+5. In VS Code, run `Remote-Containers: Clone Repository in Named Container Volume` and clone this repository. The repository fails to clone with output that looks something like this:
 
 ```
 [21 ms] Remote-Containers 0.251.0 in VS Code 1.71.0 (784b0177c56c607789f9638da7b6bf3230d47a8c).
