@@ -1,6 +1,6 @@
 # Remote Containers pull auth bug repro
 
-To reproduce this bug, you need a Docker Hub account with a private repository you can push to (or some other private image registry).
+To reproduce this bug, you need a Docker Hub account with a private repository you can push to (or some other private image registry). I found it on an M1 Mac (OS 12.3.1) with Docker Desktop 4.11.1, VS Code 1.71.0, Remote Containers v0.251.0, Node 16.15.1 and `@devcontainers/cli@0.14.2`.
 
 1. In `.devcontainer/devcontainer.json`, update `YOUR_DOCKERHUB` to refer to your own account or private registry. Commit and push.
 2. In `.devcontainer/devcontainer.json`, uncomment lines 6-10
